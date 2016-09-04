@@ -1,4 +1,4 @@
-BeginPackage["Plotters`"]
+BeginPackage["DCP`"]
 
 DomainColour::usage = "Computes the associated colour with a complex number."
 DomainColourPlot::usage = "Computes domain colouring plot of given complex function."
@@ -15,9 +15,9 @@ Begin["Private`"]
 
 DomainColour[z_] :=
 	Hue[
-		Arg[z]/(2 \[Pi]),
-		1/(1 + 0.3 Log[Abs[z] + 1]), 
-		1 - 1/(1.1 + 5 Log[Abs[z] + 1])
+		Arg[z] / (2 \[Pi]),
+		1 / (1 + 0.3 Log[Abs[z] + 1]), 
+		1 - 1 / (1.1 + 5 Log[Abs[z] + 1])
 	]
 DomainColourPlot[f_, {xMin_, xMax_}, {yMin_, yMax_}, OptionsPattern[]] :=
 	RegionPlot[True,
