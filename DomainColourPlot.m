@@ -8,7 +8,9 @@ Options[DomainColourPlot] =
 		AspectRatio -> Automatic,
 		ImageSize -> Automatic,
 		PlotPoints -> 100,
-		ImagePadding -> All
+		ImagePadding -> All,
+		PlotRangePadding -> All,
+		Frame -> True
 	}
 
 Begin["Private`"]
@@ -22,7 +24,7 @@ DomainColour[z_] :=
 DomainColourPlot[f_, {xMin_, xMax_}, {yMin_, yMax_}, OptionsPattern[]] :=
 	RegionPlot[True,
 		{x, xMin, xMax}, {y, yMin, yMax}, 
-		ColorFunction -> Function[{x, y}, DomainColour[f[x + I y]]],
+		ColorFunction -> Function[{x, y}, DomainColour@f[x + I y]],
 		ColorFunctionScaling -> False,
 		PlotPoints -> OptionValue[PlotPoints], 
 		AspectRatio ->
@@ -30,7 +32,9 @@ DomainColourPlot[f_, {xMin_, xMax_}, {yMin_, yMax_}, OptionsPattern[]] :=
 				(yMax - yMin) / (xMax - xMin),
 				OptionValue[AspectRatio]],
 		ImageSize -> OptionValue[ImageSize],
-		ImagePadding -> OptionValue[ImagePadding]
+		ImagePadding -> OptionValue[ImagePadding],
+		PlotRangePadding -> OptionValue[PlotRangePadding],
+		Frame -> OptionValue[Frame]
 	]
 
 End[]

@@ -10,6 +10,7 @@ Domain colour plotter for Mathematica
 DomainColourPlot[func, {-xMin, xMax}, {-yMin, yMax}]
 ```
 
-Options: AspectRatio, PlotPoints, ImageSize, ImagePadding.
+Options: AspectRatio, PlotPoints, ImageSize, ImagePadding, PlotRangePadding,
+Frame.
 
 Wrapping the options in curly brackets may solve some issues.
